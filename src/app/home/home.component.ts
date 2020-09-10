@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from './../services/account.service';
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  questions = [];
+
+  constructor(private service: AccountService,) { }
 
   ngOnInit(): void {
+    this.lisQuestion();
+  }
+
+  lisQuestion(){
+    this.service.questions().then((data) => {
+      this.questions = data;
+      console.log(data);
+    })
   }
 
 }

@@ -1,22 +1,25 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
+    <a class="navbar-brand" routerLink="/home" href="#">Questionário</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-    </div>
   </nav>
+  <br>
+  <br>
+
+  <div class="col-md-12">
+    <div class="card" style="margin-left: 50px; margin-right: 50px;">
+      <div style="margin-left: 50px;" class="form-check" *ngFor="let q of questions">
+        <span>{{ q.name}}</span>
+        <br>
+        <div *ngFor="let o of q.options">
+          <br>
+          <input class="form-check-input" type="radio" value="{{o.value}}" name="resposta" id="exampleRadios1" value="option1" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            {{ o.value }} - {{o.label}}
+          </label>
+        </div>
+        <br>
+      </div>
+    </div>
+</div>
