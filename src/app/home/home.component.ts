@@ -9,7 +9,9 @@ import { AccountService } from './../services/account.service';
 })
 export class HomeComponent implements OnInit {
 
-  questions = [];
+  questions: any = [];
+  perguntasDeCada: any;
+  meuModelTeste: any;
 
   constructor(private service: AccountService,) { }
 
@@ -17,11 +19,24 @@ export class HomeComponent implements OnInit {
     this.lisQuestion();
   }
 
-  lisQuestion(){
+  lisQuestion() {
     this.service.questions().then((data) => {
       this.questions = data;
       console.log(data);
     })
+  }
+
+  doAnwser() {
+    const epcEpi = this.questions.options.map((pergunta) => {
+      const { id = null, resposta = null } = pergunta;
+      return {
+        id,
+        resposta,
+      };
+    });
+    this.perguntasDeCada = [...epcEpi];
+    console.log("minhas perguntas", this.perguntasDeCada)
+
   }
 
 }
