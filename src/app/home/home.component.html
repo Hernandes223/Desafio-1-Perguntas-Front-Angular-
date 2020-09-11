@@ -8,18 +8,19 @@
   <br>
 
   <div class="col-md-12">
-    <div class="card" style="margin-left: 50px; margin-right: 50px;">
-      <div style="margin-left: 50px;" class="form-check" *ngFor="let q of questions">
+    <div class="card" style="margin-left: 50px; margin-right: 50px;" *ngFor="let q of questions">
+      <div style="margin-left: 50px;" class="form-check">
         <span>{{ q.name}}</span>
         <br>
         <div *ngFor="let o of q.options">
           <br>
-          <input class="form-check-input" type="radio" value="{{o.value}}" name="resposta" id="exampleRadios1" value="option1" checked>
-          <label class="form-check-label" for="exampleRadios1">
+          <label>
+          <input class="form-check-input" type="radio" value="{{o.label}}" [(ngModel)]="value" name="resposta" id="exampleRadios1">
             {{ o.value }} - {{o.label}}
           </label>
         </div>
         <br>
       </div>
     </div>
+    <button type="submit" class="btn btn-primary btn-login" (click)="doAnswer()">Entrar</button>
 </div>

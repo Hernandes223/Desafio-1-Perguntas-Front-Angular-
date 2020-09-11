@@ -18,6 +18,10 @@ export class AccountService {
     return this.http.post(`${environment.api}/auth/login`, dados, httpOptions).toPromise();
   }
 
+  answer(dados: any): Promise<any> {
+    return this.http.post(`${environment.api}/answers`, dados, httpOptions).toPromise();
+  }
+
   questions(): Promise<any> {
     return this.http.get(`${environment.api}/questions`, httpOptions).toPromise();
   }

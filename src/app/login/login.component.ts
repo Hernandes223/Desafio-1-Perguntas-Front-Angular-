@@ -35,9 +35,14 @@ export class LoginComponent implements OnInit {
       email: this.formLogin.value.email,
       password: this.formLogin.value.password
     }
-    this.service.login(dados).then((data) => {
+    this.service.login(dados).then((data: any) => {
       localStorage.setItem("token", data.access_token);
+      if (data) {
+        console.log(data.user)
+        JSON.stringify(localStorage.setItem("user", data));
+      }
       this.router.navigate(['/home']);
+      // console.log(teste)
       console.log(data)
     })
   }
