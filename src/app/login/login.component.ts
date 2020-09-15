@@ -38,12 +38,10 @@ export class LoginComponent implements OnInit {
     this.service.login(dados).then((data: any) => {
       localStorage.setItem("token", data.access_token);
       if (data) {
-        console.log(data.user)
-        JSON.stringify(localStorage.setItem("user", data));
+        localStorage.setItem("user_id", data.user.id);
       }
       this.router.navigate(['/home']);
       // console.log(teste)
-      console.log(data)
     })
   }
 

@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
-  <a class="navbar-brand" routerLink="/home" href="#">Questionário</a>
+<nav class="navbar navbar-expand-lg navbar-secondary bg-dark">
+  <a class="navbar-brand" routerLink="/home" href="#"><span>Questionário</span></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -8,19 +8,19 @@
 <br>
 <br>
 
-<div class="col-md-12">
-  <div class="card" style="margin-left: 50px; margin-right: 50px;">
-    <div style="margin-left: 50px;" class="form-check" *ngFor="let q of questions">
-      <span>{{q.name}}</span>
-      <br>
-      <div *ngFor="let o of q.options" [(ngModel)]="meuModelTeste">
-        <label class="form-check-label" for="exampleRadios1">
-          {{ o.value }} - {{o.label}}
+<div class="form-check">
+  <div *ngFor="let items of questions">
+    <div class="card" >
+          <label class="options">{{items.name}}</label>
+        <div *ngFor="let option of items.options" class="custom-control custom-radio options" (click)="onClick(items,option)">
+        <input class="custom-control-input" id="{{option.codigo}}" type="radio" name="{{items.id}}" value="{{option.value}}" >
+        <label class="custom-control-label" for="{{option.codigo}}" >
+         {{o.value}} - {{o.label}}
         </label>
-        <input class="form-check-input" type="radio" [value]="o.value" (select)="q.resposta = o.value">
+        </div>
       </div>
       <br>
     </div>
+    <br>
   </div>
-  <button type="submit" class="btn btn-primary btn-login" (click)="doAnwser()">Entrar</button>
-</div>
+  <button type="submit" class="btn btn-primary btn-enviar" (click)="doAnswer()">Enviar</button>

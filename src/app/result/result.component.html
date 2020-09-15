@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-secondary bg-dark nav-pills nav-fil">
+    <h3>Respostas</h3>
+      <a href="#" (click)="onLogout()"><span class="navbar-toggler-icon sair">Sair</span></a>
+  </nav>
+  <br>
+  <br>
+
+
+  <div class="card result">
+    <div class="card-body" *ngFor="let item of result">
+      <div>
+          {{item.question.name}}  <span class="badge badge-success">{{item.created_at}}</span>
+      </div>
+      <div>
+        {{item.answer}}
+      </div>
+    </div>
+  </div>

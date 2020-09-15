@@ -1,0 +1,75 @@
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
+
+  .example-card {
+    max-width: 400px;
+  }
+  
+/* Botoes */
+
+section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+  
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
+  #submit{
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: #279;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  #submit:hover{
+    background-color: #38a;
+  }
+
+  .options {
+    margin-left: 50px;
+  }
+
+  .btn-enviar {
+    margin-left: 50px;
+    width: 100px;
+  }
+
+  a span{
+    color: white;
+  }

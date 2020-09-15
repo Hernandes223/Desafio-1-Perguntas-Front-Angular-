@@ -1,0 +1,15 @@
+
+  h3{
+    color: white;
+  }
+
+  a {
+    color: white;
+    float: right;
+    margin-left: 80%;
+  }
+
+  .result{
+    margin-left: 100px;
+    margin-right: 100px;
+  }
