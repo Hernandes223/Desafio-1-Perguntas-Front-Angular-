@@ -15,7 +15,7 @@
         <div *ngFor="let option of items.options" class="custom-control custom-radio options" (click)="onClick(items,option)">
         <input class="custom-control-input" id="{{option.codigo}}" type="radio" name="{{items.id}}" value="{{option.value}}" >
         <label class="custom-control-label" for="{{option.codigo}}" >
-         {{o.value}} - {{o.label}}
+         {{option.value}} - {{option.label}}
         </label>
         </div>
       </div>
