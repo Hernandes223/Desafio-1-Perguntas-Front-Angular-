@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './guards/login.guard';
 import { ResultComponent } from './result/result.component';
+import { PublicDataComponent } from './public-data/public-data.component';
 
 
 
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'home', component: HomeComponent , canActivate: [AuthGuard]},
   { path: 'result', component:  ResultComponent, canActivate: [AuthGuard]},
+  { path: 'public-data', component:  PublicDataComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

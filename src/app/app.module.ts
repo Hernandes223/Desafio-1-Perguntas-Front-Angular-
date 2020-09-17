@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ResultComponent } from './result/result.component';
+import { PublicDataComponent } from './public-data/public-data.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ResultComponent } from './result/result.component';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    ResultComponent
+    ResultComponent,
+    PublicDataComponent
   ],
   imports: [
     BrowserModule,
